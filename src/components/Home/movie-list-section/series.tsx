@@ -22,7 +22,7 @@ const Series = () => {
             <div className='flex justify-between '>
                 <div>
                     <div className='text-2xl font-bold'>Popular Series</div>
-                    <div className="title-underline  py-[1px] mt-2 w-[150%]"></div>
+                    <div className="title-underline  py-[1px] mt-2  w-[120%] sm:w-[150%]"></div>
                 </div>
                 <div className='hover:bg-[#ff2901] hover:rounded-full p-2 px-8 cursor-pointer' onClick={() => { navigate('/series') }}>View all</div>
             </div>
