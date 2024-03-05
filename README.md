@@ -13,8 +13,8 @@ Before you begin, ensure you have met the following requirements:
 To install this project, follow these steps:
 
 ```bash
-git clone https://example.com/<Project_Name>.git
-cd <Project_Name>
+git clone https://github.com/Oluwaseun-Gbenle/movie-listing.git
+cd movie-listing
 npm install
 ```
 ### To run application, run
