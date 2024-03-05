@@ -17,7 +17,10 @@ git clone https://example.com/<Project_Name>.git
 cd <Project_Name>
 npm install
 ```
-### To run application, write "npm run dev" in the command line
+### To run application, run
+```bash
+npm run dev
+```
 ### then open http://localhost:5173 on your browser to view code
 
 
