@@ -8,7 +8,7 @@ const MovieList = () => {
     return (
         <>
             <section className='pt-6 flex justify-center'>
-                <div className="w-[75%] mx-auto">
+                <div className="w-[95%] sm:w-[90%] lg:w-[75%] mx-auto">
                     <Trending />
                     <Popular />
                     <Series/>
