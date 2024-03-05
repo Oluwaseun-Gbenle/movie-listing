@@ -1,3 +1,3 @@
 # React + TypeScript + Vite + TailwindCSS
 
-##To run application, use npm run dev
+## To run application, use npm run dev
