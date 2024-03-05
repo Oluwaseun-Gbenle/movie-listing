@@ -20,7 +20,7 @@ const Trending = () => {
             <div className='flex justify-between '>
                 <div>
                     <div className='text-2xl font-bold'>What's Trending</div>
-                    <div className="title-underline  py-[1px] mt-2 w-[150%]"></div>
+                    <div className="title-underline  py-[1px] mt-2  w-[120%] sm:w-[150%]"></div>
                 </div>
                 <div className='hover:bg-[#ff2901] hover:rounded-full p-2 px-8 cursor-pointer' onClick={() => { navigate('/trending') }}>View all</div>
             </div>
