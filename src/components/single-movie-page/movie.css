@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 .movie-bg {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
-  }
-  .movie-bg:before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,.7);
-    width: 100%;
-    overflow: auto;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+}
+.movie-bg:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  overflow: auto;
 }
 .Roboto-Mono-font {
-    font-family: 'Roboto Mono',sans-serif;
+  font-family: "Roboto Mono", sans-serif;
 }
