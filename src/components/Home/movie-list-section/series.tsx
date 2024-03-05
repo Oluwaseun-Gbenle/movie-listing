@@ -27,7 +27,7 @@ const Series = () => {
                 <div className='hover:bg-[#ff2901] hover:rounded-full p-2 px-8 cursor-pointer' onClick={() => { navigate('/series') }}>View all</div>
             </div>
             <div>
-                <div className="mt-6  pb-16 flex gap-x-7">
+                <div className="mt-6  pb-16  grid sm:grid-cols-2 lg:grid-cols-4  gap-7">
                     {movies?.slice(0, 4)?.map((movie) => (
                         <MovieCard key={movie.id} series={true} movie={movie} movies={movies} setMovies={setMovies} />
                     ))}
