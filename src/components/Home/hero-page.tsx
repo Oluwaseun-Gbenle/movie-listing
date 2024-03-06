@@ -6,9 +6,9 @@ import { MovieInterface } from '../../interfaces/MovieInterface';
 import Loader from '../../loader/loader';
 
 const HeroPage: React.FC<{
-  setSearchIsActive: (searchIsActive: boolean) => void, movies: MovieInterface[];
+  setSearchIsActive: (searchIsActive: boolean) => void,
   setMovies: React.Dispatch<React.SetStateAction<MovieInterface[]>>;
-}> = ({ setSearchIsActive, movies, setMovies }) => {
+}> = ({ setSearchIsActive, setMovies }) => {
   const [backgroundImageUrl, setBackgroundImageUrl] = useState<MovieInterface>();
   const [isLoading, setIsLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -28,17 +28,36 @@ const HeroPage: React.FC<{
     fetchData();
   }, []);
 
+  const fetchContent = async (searchQuery: string) => {
+    const query = encodeURIComponent(searchQuery.trim()); // Ensure the query is URL-safe
+    const movieUrl = `${request.searchMovies}&query=${query}`;
+    const tvUrl = `${request.searchSeries}&query=${query}`;
+
+    setIsLoading(true);
+
+    try {
+      // Fetch movies
+      const movieResponse = await fetchedMovieList.get(movieUrl);
+
+      // Fetch TV series
+      const tvResponse = await fetchedMovieList.get(tvUrl);
+
+      // Combining movies and TV series into one array
+      const combinedResults = [...movieResponse.data.results, ...tvResponse.data.results];
+
+      setMovies(combinedResults.length > 0 ? combinedResults : []);
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Error fetching content:', error);
+      setMovies([]);
+      setIsLoading(false);
+    }
+  };
+
 
   const handleSearchSubmit = () => {
     if (!searchQuery.trim()) return; // To Avoid searching for empty or whitespace-only queries
-
-    setIsLoading(true);
-    const filteredMovies = movies.filter(movie =>
-      movie.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-
-    setMovies(filteredMovies.length > 0 ? filteredMovies : []);
-    setIsLoading(false);
+    fetchContent(searchQuery);
   };
 
   return (
@@ -52,6 +71,7 @@ const HeroPage: React.FC<{
           <div className='md:flex justify-center hidden'>
             <div className="hero-btn-bg w-[80%] p-1 rounded-full mt-8 ">
               <input type="text" placeholder='Search...' className='px-6 focus:outline-none text-[21px] arial rounded-full w-[70%] md:w-[80%] p-1 text-black'
+                value={searchQuery}
                 onChange={(e) => { e.target.value ? setSearchIsActive(true) : setSearchIsActive(false); setSearchQuery(e.target.value); }}
               />
               <button className='arial sm:text-[21px] text-center w-full sm:w-[19%]' onClick={handleSearchSubmit}> Show Me!</button>
