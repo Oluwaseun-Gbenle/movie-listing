@@ -27,7 +27,7 @@ const Trending = () => {
             <div>
                 <div className="mt-6  pb-16  grid sm:grid-cols-2 lg:grid-cols-4 gap-7">
                     {movies?.slice(0, 4)?.map((movie) => (
-                        <MovieCard key={movie.id} series={false} movie={movie} movies={movies} setMovies={setMovies} />
+                        <MovieCard key={movie.id}  movie={movie} movies={movies} setMovies={setMovies} />
                     ))}
                 </div>
             </div>

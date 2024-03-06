@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { MovieCardInterface } from "../../../interfaces/MovieCardInterface";
 
-const MovieCard: React.FC<MovieCardInterface> = ({ series, movie, movies, setMovies }) => {
+const MovieCard: React.FC<MovieCardInterface> = ({ movie, movies, setMovies }) => {
     const baseUrl = "https://image.tmdb.org/t/p/original/";
     const navigate = useNavigate();
 
@@ -20,7 +20,6 @@ const MovieCard: React.FC<MovieCardInterface> = ({ series, movie, movies, setMov
             [key: number]: boolean;
         }
         const clickedMovies: ClickedMovies = updatedMovies?.reduce((acc, curr) => {
-            console.log("2", acc[curr.id])
             if (curr.clicked) acc[curr.id] = true;
             else delete acc[curr.id]; // Remove the entry if the movie is unclicked
             return acc;
@@ -38,8 +37,8 @@ const MovieCard: React.FC<MovieCardInterface> = ({ series, movie, movies, setMov
             </svg>
             <img className='w-full' src={`${baseUrl}${movie.poster_path}`} alt={movie.original_title} />
             <div className='mt-4 ms-2 leading-tight font-semibold'>
-                <div>{!series ? movie.original_title : movie.original_name}</div>
-                <div>{!series ? movie.release_date : movie.first_air_date}</div>
+                <div>{ movie.original_title || movie.original_name}</div>
+                <div>{ movie.release_date || movie.first_air_date}</div>
             </div>
         </div>
     );

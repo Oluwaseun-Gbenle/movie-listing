@@ -1,11 +1,15 @@
+import { useState } from 'react'
 import HeroPage from './hero-page'
 import MovieList from './movie-list-section/movie-list'
+import { MovieInterface } from '../../interfaces/MovieInterface'
 
 const HomePage = () => {
+    const [searchIsActive, setSearchIsActive] = useState(false)
+    const [movies, setMovies] = useState<MovieInterface[]>([]);
     return (
         <>
-            <HeroPage />
-            <MovieList />
+            <HeroPage setSearchIsActive={setSearchIsActive} movies={movies} setMovies ={setMovies} />
+            <MovieList searchIsActive={searchIsActive} movies={movies} setMovies ={setMovies} />
         </>
     )
 }

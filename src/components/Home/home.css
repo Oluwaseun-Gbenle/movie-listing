@@ -1,6 +1,9 @@
 .hero-btn-bg,
 .title-underline {
   background-image: linear-gradient(to right top, #ff2901, #d9004a, #9a1862, #562a5a, #262335);
+  background-size: 200% 200%;
+  animation: moveGradient 3s infinite alternate;
+  -webkit-animation: moveGradient 3s infinite alternate;
 }
 
 .arial {
@@ -36,4 +39,15 @@
 
 .movie-card-bg {
   background-image: linear-gradient(to right top, #ff2901, #d9004a, #9a1862, #562a5a, #262335);
+  background-size: 200% 200%;
+  animation: moveGradient 3s infinite alternate;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }

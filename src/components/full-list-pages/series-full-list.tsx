@@ -15,10 +15,10 @@ const SeriesFullList = () => {
     }, []);
     return (
         <div>
-            <div className='w-[70%] mx-auto mt-10'>
+            <div className='w-[90%] md:w-[70%] lg:w-[90%] xl:w-[70%] mx-auto mt-10'>
                 <div className="mt-6  pb-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {movies?.map((movie) => (
-                        <MovieCard key={movie.id} series={true} movie={movie} movies={movies} setMovies={setMovies} />
+                        <MovieCard key={movie.id}  movie={movie} movies={movies} setMovies={setMovies} />
                     ))}
                 </div>
             </div>
