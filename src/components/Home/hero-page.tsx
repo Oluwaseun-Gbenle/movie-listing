@@ -67,7 +67,7 @@ const HeroPage: React.FC<{
       }}>
         <div className='w-full'>
           <div className="text-2xl sm:text-[51px] text-center font-bold">Welcome!</div>
-          <div className="font-bold text-base sm:text-3xl mt-2 text-center">Discover and explore recent and trending Movies & TV Shows</div>
+          <div className="font-bold text-base sm:text-3xl mt-6 text-center">Discover and explore recent and trending Movies & TV Shows</div>
           <div className='md:flex justify-center hidden'>
             <div className="hero-btn-bg w-[80%] p-1 rounded-full mt-8 ">
               <input type="text" placeholder='Search...' className='px-6 focus:outline-none text-[21px] arial rounded-full w-[70%] md:w-[80%] p-1 text-black'
