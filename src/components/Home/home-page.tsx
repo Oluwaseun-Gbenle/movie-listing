@@ -8,7 +8,7 @@ const HomePage = () => {
     const [movies, setMovies] = useState<MovieInterface[]>([]);
     return (
         <>
-            <HeroPage setSearchIsActive={setSearchIsActive} movies={movies} setMovies ={setMovies} />
+            <HeroPage setSearchIsActive={setSearchIsActive} setMovies ={setMovies} />
             <MovieList searchIsActive={searchIsActive} movies={movies} setMovies ={setMovies} />
         </>
     )
